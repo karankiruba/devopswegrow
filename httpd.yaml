@@ -1,0 +1,9 @@
+---
+- name: install httpd on branch feature1
+  hosts: master
+  gather_facts: yes
+  tasks:
+  - name: httpd installation changed now for git
+    yum:
+     name: httpd
+     state: present  
