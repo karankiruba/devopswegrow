@@ -1,0 +1,17 @@
+---
+- name: Insert CPU, Memory
+  hosts: all
+  tasks:
+    - name: Creating a new file named basha
+      file:
+        path: /tmp/basha.j2
+        state: touch
+        owner: devops
+    - name: Update the Value of CPU, Memory
+      copy:
+        content: |
+          Node_name- {{ansible_nodename}} 
+          vCPU- {{ansible_processor_vcpus}}
+          Memory- {{ansible_memtotal_mb}}
+        dest: /tmp/basha.j2
+
