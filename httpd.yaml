@@ -3,7 +3,7 @@
   hosts: master
   gather_facts: yes
   tasks:
-  - name: httpd installation
+  - name: httpd installation changed now for git
     yum:
      name: httpd
      state: present  
